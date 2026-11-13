@@ -16,7 +16,7 @@ Chấm phát âm bằng Web Speech API (`vi-VN`, miễn phí, chạy trên Chrom
 4. **Project Settings → API**: chép **Project URL** và **anon public key**.
 5. Sau khi cô đã tạo tài khoản trên trang: **Authentication → Sign In / Providers** → tắt **Allow new users to sign up** để người lạ không tạo được tài khoản.
 
-> Gói miễn phí tự tạm dừng nếu 7 ngày không ai dùng — vào dashboard bấm **Restore** là chạy lại, dữ liệu vẫn còn.
+> Gói miễn phí tự tạm dừng nếu 7 ngày không ai dùng. Vercel Cron gọi `/api/keepalive` mỗi ngày 10:00 (giờ VN) để tránh việc này (`vercel.json`, `api/keepalive.js`; xem lịch sử ở Vercel → Settings → Cron Jobs). Nếu vẫn bị dừng: vào dashboard bấm **Restore**, dữ liệu vẫn còn.
 
 ## Chạy trên máy
 
