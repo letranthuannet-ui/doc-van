@@ -15,6 +15,7 @@ export default function Home() {
     <div className="app">
       <header>
         <h1>📖 Bé Đọc Vần</h1>
+        <a className="stars guide-link" href="/huong-dan.html">📘 Hướng dẫn</a>
       </header>
 
       <div className="home">

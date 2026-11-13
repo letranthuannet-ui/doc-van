@@ -34,6 +34,9 @@ export default function TeacherApp() {
         </h1>
         <div className="row">
           <span className="muted small-text">{session.user.email}</span>
+          <a className="btn small ghost guide-link" href="/huong-dan.html" target="_blank" rel="noopener">
+            📘 Hướng dẫn
+          </a>
           <button className="btn small ghost" onClick={() => db().auth.signOut()}>
             Đăng xuất
           </button>

@@ -44,6 +44,7 @@ Anon key được thiết kế để công khai; dữ liệu được bảo vệ
 | `src/pages/teacher/` | Góc của cô: lớp, bài, soạn bài + ghi âm, kết quả |
 | `src/pages/Student.tsx` | Học sinh vào lớp bằng mã |
 | `src/data.ts` | Bộ vần cho Luyện tự do |
+| `public/huong-dan.html` | Sổ tay hướng dẫn (ảnh trong `public/huong-dan/`), xem tại `/huong-dan.html` |
 
 ## Giới hạn
 

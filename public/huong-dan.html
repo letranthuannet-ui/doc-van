@@ -119,6 +119,9 @@ figcaption { font-size: .9rem; color: var(--muted); }
 .chip.miss { background: var(--miss-bg); color: var(--miss); }
 .chip.none { border: 1px solid var(--rule); }
 
+.back { justify-self: start; color: var(--muted); font-weight: 700; text-decoration: none; }
+.back:hover, .back:focus-visible { color: var(--brand); }
+
 .faq { display: grid; gap: 10px; }
 details {
   background: var(--sheet); border: 1px solid var(--rule); border-radius: 12px; padding: 12px 16px;
@@ -133,6 +136,7 @@ footer { color: var(--muted); font-size: .9rem; }
 
 <div class="wrap">
   <header class="top">
+    <a class="back" href="/">← Về trang Bé Đọc Vần</a>
     <span class="badge">Sổ tay cho cô</span>
     <h1>Bé Đọc <span class="van">Vần</span></h1>
     <p class="lede">Trang web giúp bé lớp 1 luyện đọc âm, vần ở nhà. Cô soạn bài theo sách, ghi âm giọng đọc mẫu, gửi link cho phụ huynh, rồi xem bé nào đọc sai vần nào để kèm thêm.</p>
@@ -154,7 +158,7 @@ footer { color: var(--muted); font-size: .9rem; }
     </div>
     <p>Địa chỉ trang: <a href="https://doc-van.vercel.app" target="_blank" rel="noopener"><b>doc-van.vercel.app</b></a>. Mở bằng <b>Google Chrome</b> hoặc <b>Microsoft Edge</b>, trên máy tính hay điện thoại đều được. Firefox chưa hỗ trợ nhận giọng nói.</p>
     <figure>
-      <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="guide/01-trang-chu.png" alt="Trang chủ với ba ô: Học sinh nhập mã lớp, Luyện tự do, Góc của cô" width="1100" height="820" loading="lazy"></div>
+      <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="huong-dan/01-trang-chu.png" alt="Trang chủ với ba ô: Học sinh nhập mã lớp, Luyện tự do, Góc của cô" width="1100" height="820" loading="lazy"></div>
       <figcaption>Trang chủ. Cô bấm vào ô <b>Góc của cô</b>.</figcaption>
     </figure>
     <ol class="steps">
@@ -162,7 +166,7 @@ footer { color: var(--muted); font-size: .9rem; }
       <li><span>Những lần sau: nhập email, mật khẩu và bấm <span class="ui primary">Đăng nhập</span>. Trình duyệt sẽ nhớ, không phải đăng nhập lại mỗi ngày.</span></li>
     </ol>
     <figure>
-      <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="guide/02-dang-nhap.png" alt="Màn hình đăng nhập Góc của cô" width="1100" height="820" loading="lazy"></div>
+      <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="huong-dan/02-dang-nhap.png" alt="Màn hình đăng nhập Góc của cô" width="1100" height="820" loading="lazy"></div>
       <figcaption>Màn hình đăng nhập.</figcaption>
     </figure>
   </section>
@@ -178,7 +182,7 @@ footer { color: var(--muted); font-size: .9rem; }
       <li><span>Bấm <span class="ui">Chép link</span> và gửi link này vào nhóm Zalo phụ huynh. Bé mở link là vào thẳng lớp.</span></li>
     </ol>
     <figure>
-      <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="guide/03-lop-hoc.png" alt="Tab Lớp học: lớp 1A, link cho học sinh, danh sách 5 học sinh và ô thêm học sinh" width="1100" height="820" loading="lazy"></div>
+      <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="huong-dan/03-lop-hoc.png" alt="Tab Lớp học: lớp 1A, link cho học sinh, danh sách 5 học sinh và ô thêm học sinh" width="1100" height="820" loading="lazy"></div>
       <figcaption>Lớp 1A với 5 học sinh. Trên trang thật, link có dạng <code>doc-van.vercel.app/#/lop/MÃLỚP</code> (ảnh chụp lúc thử trên máy nên ghi “localhost”).</figcaption>
     </figure>
     <ul class="plain">
@@ -200,7 +204,7 @@ footer { color: var(--muted); font-size: .9rem; }
       <li><span>Bấm <span class="ui">▶</span> để nghe lại. Chưa ưng thì bấm <span class="ui">🎙 Ghi lại</span>, bản cũ sẽ được thay.</span></li>
     </ol>
     <figure>
-      <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="guide/05-soan-bai.png" alt="Màn soạn bài 45 với 3 vần an, ăn, ân; hai vần đầu đã có giọng mẫu" width="1100" height="900" loading="lazy"></div>
+      <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="huong-dan/05-soan-bai.png" alt="Màn soạn bài 45 với 3 vần an, ăn, ân; hai vần đầu đã có giọng mẫu" width="1100" height="900" loading="lazy"></div>
       <figcaption>Bài 45 có 3 vần. “an” và “ăn” đã ghi âm (có nút ▶), “ân” chưa ghi.</figcaption>
     </figure>
     <div class="note tip">
@@ -223,7 +227,7 @@ footer { color: var(--muted); font-size: .9rem; }
     </div>
     <p>Trong danh sách bài, mỗi bài có dòng <b>Giao cho</b>. Bấm vào tên lớp: chuyển sang màu xanh là bé trong lớp đã thấy bài. Bấm lần nữa để thu bài lại. Kết quả bé đã đọc không mất, chỉ tạm ẩn khỏi tab Kết quả và hiện lại khi cô giao lại bài.</p>
     <figure>
-      <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="guide/04-bai-hoc.png" alt="Danh sách bài: Bài 45 và 46 đã giao cho Lớp 1A, Bài 47 chưa giao" width="1100" height="820" loading="lazy"></div>
+      <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="huong-dan/04-bai-hoc.png" alt="Danh sách bài: Bài 45 và 46 đã giao cho Lớp 1A, Bài 47 chưa giao" width="1100" height="820" loading="lazy"></div>
       <figcaption>Bài 45 và 46 đã giao cho Lớp 1A. Bài 47 chưa có vần nên chưa giao.</figcaption>
     </figure>
     <p>Có thể soạn trước nhiều bài, đến tuần nào giao tuần đó.</p>
@@ -235,7 +239,7 @@ footer { color: var(--muted); font-size: .9rem; }
       <h2>Xem bé nào cần kèm thêm</h2>
     </div>
     <figure>
-      <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="guide/06-ket-qua.png" alt="Tab Kết quả: bảng vần lớp hay đọc sai và bảng từng bạn, đang mở chi tiết bé Bình" width="1100" height="820" loading="lazy"></div>
+      <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="huong-dan/06-ket-qua.png" alt="Tab Kết quả: bảng vần lớp hay đọc sai và bảng từng bạn, đang mở chi tiết bé Bình" width="1100" height="820" loading="lazy"></div>
       <figcaption>Ví dụ: cả lớp hay sai vần “ôn” và “ăn”; bé Dũng chưa đọc đúng vần nào.</figcaption>
     </figure>
     <ul class="plain">
@@ -258,19 +262,19 @@ footer { color: var(--muted); font-size: .9rem; }
     </div>
     <div class="phones">
       <figure>
-        <div class="shot"><img src="guide/07-chon-ten.png" alt="Màn chọn tên: các nút An, Bình, Chi, Dũng, Hoa" width="400" height="820" loading="lazy"></div>
+        <div class="shot"><img src="huong-dan/07-chon-ten.png" alt="Màn chọn tên: các nút An, Bình, Chi, Dũng, Hoa" width="400" height="820" loading="lazy"></div>
         <figcaption><b>1. Chọn tên.</b> Chỉ chọn lần đầu, máy sẽ nhớ.</figcaption>
       </figure>
       <figure>
-        <div class="shot"><img src="guide/08-bai-duoc-giao.png" alt="Danh sách bài cô giao với số sao đã đạt" width="400" height="820" loading="lazy"></div>
+        <div class="shot"><img src="huong-dan/08-bai-duoc-giao.png" alt="Danh sách bài cô giao với số sao đã đạt" width="400" height="820" loading="lazy"></div>
         <figcaption><b>2. Chọn bài</b> cô giao. ⭐ là số vần đã đọc đúng.</figcaption>
       </figure>
       <figure>
-        <div class="shot"><img src="guide/09-luyen-doc.png" alt="Màn luyện đọc vần an, từ cái bàn, nút Nghe cô đọc và Bé đọc" width="400" height="820" loading="lazy"></div>
+        <div class="shot"><img src="huong-dan/09-luyen-doc.png" alt="Màn luyện đọc vần an, từ cái bàn, nút Nghe cô đọc và Bé đọc" width="400" height="820" loading="lazy"></div>
         <figcaption><b>3. Nghe rồi đọc.</b> Bấm <b>Nghe cô đọc</b>, sau đó bấm <b>Bé đọc</b> và đọc to.</figcaption>
       </figure>
       <figure>
-        <div class="shot"><img src="guide/10-ket-qua-doc.png" alt="Kết quả: chữ cái màu xanh, chữ bàn màu vàng, thông báo gần đúng chú ý dấu thanh" width="400" height="820" loading="lazy"></div>
+        <div class="shot"><img src="huong-dan/10-ket-qua-doc.png" alt="Kết quả: chữ cái màu xanh, chữ bàn màu vàng, thông báo gần đúng chú ý dấu thanh" width="400" height="820" loading="lazy"></div>
         <figcaption><b>4. Xem kết quả.</b> Bé đọc “cái bán” nên chữ “bàn” hiện màu vàng: sai dấu.</figcaption>
       </figure>
     </div>
@@ -286,7 +290,7 @@ footer { color: var(--muted); font-size: .9rem; }
     </div>
     <h3>Luyện tự do</h3>
     <figure>
-      <div class="shot"><img src="guide/11-tu-do.png" alt="Màn luyện tự do với các nhóm âm ghép và vần" width="400" height="820" loading="lazy" style="max-width:300px"></div>
+      <div class="shot"><img src="huong-dan/11-tu-do.png" alt="Màn luyện tự do với các nhóm âm ghép và vần" width="400" height="820" loading="lazy" style="max-width:300px"></div>
       <figcaption>Ở trang chủ có mục <b>Luyện tự do</b> với hơn 100 âm, vần lớp 1 có sẵn, không cần cô giao bài. Kết quả phần này chỉ lưu trên máy của bé, không gửi cho cô.</figcaption>
     </figure>
   </section>

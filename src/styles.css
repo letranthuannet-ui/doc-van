@@ -307,6 +307,7 @@ tr.clickable:hover { background: var(--bg); }
 .lesson-head { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
 .card.empty { color: var(--muted); }
 button.stars { color: var(--ink); }
+a.guide-link { text-decoration: none; color: var(--ink); }
 
 footer {
   margin-top: 20px;
