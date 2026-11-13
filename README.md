@@ -1,34 +1,51 @@
 # Bé Đọc Vần
 
-Trang luyện đọc âm/vần tiếng Việt lớp 1: bé nghe mẫu, bấm mic đọc, máy báo đúng / gần đúng (sai dấu thanh) / chưa đúng theo từng tiếng.
+Trang luyện đọc âm/vần tiếng Việt lớp 1.
 
-- Nhận giọng: Web Speech API (`vi-VN`) — miễn phí, chạy trên trình duyệt, không cần server.
-- Giọng mẫu: giọng đọc tiếng Việt có sẵn trên máy (nếu máy không có, nút "Nghe mẫu" bị tắt).
-- Tiến độ lưu trong trình duyệt (localStorage).
+- **Luyện tự do** (`#/tu-do`): hơn 100 vần có sẵn, không cần tài khoản.
+- **Góc của cô** (`#/co`): tạo lớp, thêm học sinh, soạn bài theo sách, ghi âm giọng mẫu, giao bài, xem kết quả cả lớp.
+- **Học sinh** (`#/lop/<MÃ>`): mở link cô gửi → chọn tên → luyện bài được giao; kết quả tự gửi về cho cô.
+
+Chấm phát âm bằng Web Speech API (`vi-VN`, miễn phí, chạy trên Chrome/Edge). Chỉ lưu kết quả đúng/sai và chữ máy nghe được — **không lưu giọng học sinh**.
+
+## Cài Supabase (1 lần, miễn phí)
+
+1. Tạo tài khoản tại https://supabase.com → **New project** (Region: Singapore). Ghi lại mật khẩu database.
+2. **SQL Editor** → New query → dán toàn bộ `supabase/schema.sql` → **Run**.
+3. **Authentication → Sign In / Providers → Email**: tắt **Confirm email** (dùng trong nhà, không cần xác nhận email).
+4. **Project Settings → API**: chép **Project URL** và **anon public key**.
+5. Sau khi cô đã tạo tài khoản trên trang: **Authentication → Sign In / Providers** → tắt **Allow new users to sign up** để người lạ không tạo được tài khoản.
+
+> Gói miễn phí tự tạm dừng nếu 7 ngày không ai dùng — vào dashboard bấm **Restore** là chạy lại, dữ liệu vẫn còn.
 
 ## Chạy trên máy
 
 ```bash
+cp .env.example .env.local   # điền URL + anon key
 npm install
 npm run dev
 ```
 
-Mở http://localhost:5173 bằng **Chrome** hoặc **Edge** (Firefox không hỗ trợ nhận giọng).
+Không có `.env.local` thì trang vẫn chạy, chỉ có chế độ Luyện tự do.
 
-## Deploy lên Vercel
+## Deploy Vercel
 
-1. Đẩy thư mục này lên một repo GitHub.
-2. Vào https://vercel.com/new → Import repo → Vercel tự nhận Vite → Deploy.
+Vercel → Project → **Settings → Environment Variables** → thêm `VITE_SUPABASE_URL` và `VITE_SUPABASE_ANON_KEY` → **Deployments → Redeploy**.
 
-Hoặc dùng CLI: `npx vercel` (lần đầu sẽ hỏi đăng nhập).
+Anon key được thiết kế để công khai; dữ liệu được bảo vệ bằng Row Level Security trong `schema.sql` (cô chỉ thấy lớp của mình; học sinh chỉ đọc bài được giao qua mã lớp).
 
-## Thêm / sửa vần
+## Cấu trúc
 
-Sửa `src/data.ts`. Mỗi dòng: `['vần', 'từ ví dụ', 'emoji (tuỳ chọn)']`.
-Nên dùng từ 2 tiếng quen thuộc — máy nhận từ có nghĩa tốt hơn vần đứng riêng.
+| Đường dẫn | Nội dung |
+|---|---|
+| `supabase/schema.sql` | Bảng, quyền (RLS), hàm cho học sinh, kho ghi âm |
+| `src/components/Practice.tsx` | Màn luyện đọc dùng chung |
+| `src/match.ts` | Chấm theo từng tiếng, nhận biết sai dấu thanh |
+| `src/pages/teacher/` | Góc của cô: lớp, bài, soạn bài + ghi âm, kết quả |
+| `src/pages/Student.tsx` | Học sinh vào lớp bằng mã |
+| `src/data.ts` | Bộ vần cho Luyện tự do |
 
 ## Giới hạn
 
-- Máy chỉ so chữ nghe được với đáp án, không chấm từng âm vị.
-- Giọng trẻ nhỏ, giọng vùng miền có thể bị nhận sai.
-- Âm thanh được trình duyệt gửi lên dịch vụ nhận giọng của Google/Apple; cần Internet.
+- Máy chỉ so chữ nghe được với đáp án, không chấm từng âm vị; giọng trẻ nhỏ, giọng vùng miền có thể bị nhận sai.
+- Ai có link lớp đều vào được lớp đó — chỉ gửi link cho phụ huynh trong lớp.

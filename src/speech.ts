@@ -80,14 +80,18 @@ export function listen(h: ListenHandlers): () => void {
 
 let viVoice: SpeechSynthesisVoice | null = null;
 
-export function loadVoice(cb: (ok: boolean) => void) {
-  if (!('speechSynthesis' in window)) return cb(false);
+export function loadVoice(cb: (ok: boolean) => void): () => void {
+  if (!('speechSynthesis' in window)) {
+    cb(false);
+    return () => {};
+  }
   const pick = () => {
     viVoice = speechSynthesis.getVoices().find((v) => v.lang.toLowerCase().startsWith('vi')) ?? null;
     cb(!!viVoice);
   };
   pick();
   speechSynthesis.addEventListener('voiceschanged', pick);
+  return () => speechSynthesis.removeEventListener('voiceschanged', pick);
 }
 
 export function speak(text: string) {
